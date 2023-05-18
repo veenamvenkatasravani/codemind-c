@@ -1,19 +1,36 @@
 #include<stdio.h>
-#include<math.h>
 int main()
 {
-    int n,sum=0,k,d,m;
+    int n,r,sum=0,a,c=1,p=1,i;
     scanf("%d",&n);
-    m=n;
-    while(n)
+    a=n;
+    while(a!=0)
     {
-        d=log10(n)+1;
-        k=n%10;
-        sum=sum+pow(k,d);
-        n=n/10;
+        r=a%10;
+        sum=(sum*10)+r;
+        a=a/10;
     }
-    if(m==sum)
-    printf("True");
+    a=sum;
+    sum=0;
+    while(a!=0)
+    {
+        r=a%10;
+        for(i=1;i<=c;i++)
+        {
+            p=p*r;
+        }
+        sum=sum+p;
+        a=a/10;
+        c++;
+        p=1;
+    }
+    if(sum==n)
+    {
+        printf("True");
+    }
     else
-    printf("False");
+    {
+        printf("False");
+    }
+    
 }
