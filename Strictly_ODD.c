@@ -1,34 +1,33 @@
+// strictly odd
 #include<stdio.h>
 int main()
 {
-    int n,i,c;
-    scanf("%d",&n);
-    int a[n];
-    for(i=0;i<n;i++)
-    {
-        scanf("%d",&a[i]);
-    }
-    for(i=0;i<n;i++)
-    {
-        if(a[i]%2!=0)
-        {
-            if(i%2!=0)
-            {
-                c=0;
-            }
-            else
-            {
-                c=1;
-                break;
-            }
-        }
-    }
-    if(c!=1)
-    {
-        printf("True");
-    }
-    else
-    {
-        printf("False");
-    }
+	int a;
+	scanf("%d",&a);
+	int arr[a],i,j,flag=0;
+	for (i=0;i<a; i++)
+	{
+		scanf("%d",&arr[i]);
+	}
+	for (i=0; i<a; i++)
+	{
+		if (i%2==1 && arr[i]%2==1)
+		{
+			flag=1;
+		}
+		else if (i%2!=1 && arr[i]%2==1)
+		{
+			flag=0;
+			break;
+		}
+	}
+	if (flag==1)
+	{
+		printf("True");
+	}
+	else
+	{
+		printf("False");
+	}
+	return 0;
 }
